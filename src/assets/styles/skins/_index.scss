@@ -1,0 +1,43 @@
+@import "./default.scss";
+
+$skins: (
+  default: $default,
+);
+
+@mixin skinify {
+  @each $skin-name, $skin-map in $skins {
+    $skin-map: $skin-map !global;
+    [data-skin="#{$skin-name}"] & {
+      @content;
+    }
+  }
+}
+
+//声明一个根据Key获取颜色的function
+@function skinned($key) {
+  @return map-get($skin-map, $key);
+}
+
+@mixin color($color) {
+  @include skinify {
+    color: skinned($color) !important;
+  }
+}
+
+@mixin background_color($color) {
+  @include skinify {
+    background-color: skinned($color) !important;
+  }
+}
+
+@mixin border($color) {
+  @include skinify {
+    border: skinned($color) !important;
+  }
+}
+
+@mixin box_shadow($color) {
+  @include skinify {
+    box-shadow: skinned($color) !important;
+  }
+}

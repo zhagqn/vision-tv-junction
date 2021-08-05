@@ -1,0 +1,408 @@
+@use 'sass:math';
+
+// 0-3.5
+$nums: (
+  0: "0",
+  0.5: "0\\\.5",
+  1: "1",
+  1.5: "1\\\.5",
+  2: "2",
+  2.5: "2\\\.5",
+  3: "3",
+  3.5: "3\\\.5",
+);
+
+@each $i, $s in $nums {
+  .p-#{$s} {
+    padding: math.div($i, 4) * 1rem;
+  }
+  .px-#{$s} {
+    padding-left: math.div($i, 4) * 1rem;
+    padding-right: math.div($i, 4) * 1rem;
+  }
+  .py-#{$s} {
+    padding-top: math.div($i, 4) * 1rem;
+    padding-bottom: math.div($i, 4) * 1rem;
+  }
+  .pt-#{$s} {
+    padding-top: math.div($i, 4) * 1rem;
+  }
+  .pb-#{$s} {
+    padding-bottom: math.div($i, 4) * 1rem;
+  }
+  .pl-#{$s} {
+    padding-left: math.div($i, 4) * 1rem;
+  }
+  .pr-#{$s} {
+    padding-right: math.div($i, 4) * 1rem;
+  }
+
+  .-p-#{$s} {
+    padding: math.div($i, 4) * -1rem;
+  }
+  .-px-#{$s} {
+    padding-left: math.div($i, 4) * -1rem;
+    padding-right: math.div($i, 4) * -1rem;
+  }
+  .-py-#{$s} {
+    padding-top: math.div($i, 4) * -1rem;
+    padding-bottom: math.div($i, 4) * -1rem;
+  }
+  .-pt-#{$s} {
+    padding-top: math.div($i, 4) * -1rem;
+  }
+  .-pb-#{$s} {
+    padding-bottom: math.div($i, 4) * -1rem;
+  }
+  .-pl-#{$s} {
+    padding-left: math.div($i, 4) * -1rem;
+  }
+  .-pr-#{$s} {
+    padding-right: math.div($i, 4) * -1rem;
+  }
+
+  .m-#{$s} {
+    margin: math.div($i, 4) * 1rem;
+  }
+  .mx-#{$s} {
+    margin-left: math.div($i, 4) * 1rem;
+    margin-right: math.div($i, 4) * 1rem;
+  }
+  .my-#{$s} {
+    margin-top: math.div($i, 4) * 1rem;
+    margin-bottom: math.div($i, 4) * 1rem;
+  }
+  .mt-#{$s} {
+    margin-top: math.div($i, 4) * 1rem;
+  }
+  .mb-#{$s} {
+    margin-bottom: math.div($i, 4) * 1rem;
+  }
+  .ml-#{$s} {
+    margin-left: math.div($i, 4) * 1rem;
+  }
+  .mr-#{$s} {
+    margin-right: math.div($i, 4) * 1rem;
+  }
+
+  .-m-#{$s} {
+    margin: math.div($i, 4) * -1rem;
+  }
+  .-mx-#{$s} {
+    margin-left: math.div($i, 4) * -1rem;
+    margin-right: math.div($i, 4) * -1rem;
+  }
+  .-my-#{$s} {
+    margin-top: math.div($i, 4) * -1rem;
+    margin-bottom: math.div($i, 4) * -1rem;
+  }
+  .-mt-#{$s} {
+    margin-top: math.div($i, 4) * -1rem;
+  }
+  .-mb-#{$s} {
+    margin-bottom: math.div($i, 4) * -1rem;
+  }
+  .-ml-#{$s} {
+    margin-left: math.div($i, 4) * -1rem;
+  }
+  .-mr-#{$s} {
+    margin-right: math.div($i, 4) * -1rem;
+  }
+}
+
+// 4-12
+@for $i from 4 through 12 {
+  .p-#{$i} {
+    padding: math.div($i, 4) * 1rem;
+  }
+  .px-#{$i} {
+    padding-left: math.div($i, 4) * 1rem;
+    padding-right: math.div($i, 4) * 1rem;
+  }
+  .py-#{$i} {
+    padding-top: math.div($i, 4) * 1rem;
+    padding-bottom: math.div($i, 4) * 1rem;
+  }
+  .pt-#{$i} {
+    padding-top: math.div($i, 4) * 1rem;
+  }
+  .pb-#{$i} {
+    padding-bottom: math.div($i, 4) * 1rem;
+  }
+  .pl-#{$i} {
+    padding-left: math.div($i, 4) * 1rem;
+  }
+  .pr-#{$i} {
+    padding-right: math.div($i, 4) * 1rem;
+  }
+
+  .-p-#{$i} {
+    padding: math.div($i, 4) * -1rem;
+  }
+  .-px-#{$i} {
+    padding-left: math.div($i, 4) * -1rem;
+    padding-right: math.div($i, 4) * -1rem;
+  }
+  .-py-#{$i} {
+    padding-top: math.div($i, 4) * -1rem;
+    padding-bottom: math.div($i, 4) * -1rem;
+  }
+  .-pt-#{$i} {
+    padding-top: math.div($i, 4) * -1rem;
+  }
+  .-pb-#{$i} {
+    padding-bottom: math.div($i, 4) * -1rem;
+  }
+  .-pl-#{$i} {
+    padding-left: math.div($i, 4) * -1rem;
+  }
+  .-pr-#{$i} {
+    padding-right: math.div($i, 4) * -1rem;
+  }
+
+  .m-#{$i} {
+    margin: math.div($i, 4) * 1rem;
+  }
+  .mx-#{$i} {
+    margin-left: math.div($i, 4) * 1rem;
+    margin-right: math.div($i, 4) * 1rem;
+  }
+  .my-#{$i} {
+    margin-top: math.div($i, 4) * 1rem;
+    margin-bottom: math.div($i, 4) * 1rem;
+  }
+  .mt-#{$i} {
+    margin-top: math.div($i, 4) * 1rem;
+  }
+  .mb-#{$i} {
+    margin-bottom: math.div($i, 4) * 1rem;
+  }
+  .ml-#{$i} {
+    margin-left: math.div($i, 4) * 1rem;
+  }
+  .mr-#{$i} {
+    margin-right: math.div($i, 4) * 1rem;
+  }
+
+  .-m-#{$i} {
+    margin: math.div($i, 4) * -1rem;
+  }
+  .-mx-#{$i} {
+    margin-left: math.div($i, 4) * -1rem;
+    margin-right: math.div($i, 4) * -1rem;
+  }
+  .-my-#{$i} {
+    margin-top: math.div($i, 4) * -1rem;
+    margin-bottom: math.div($i, 4) * -1rem;
+  }
+  .-mt-#{$i} {
+    margin-top: math.div($i, 4) * -1rem;
+  }
+  .-mb-#{$i} {
+    margin-bottom: math.div($i, 4) * -1rem;
+  }
+  .-ml-#{$i} {
+    margin-left: math.div($i, 4) * -1rem;
+  }
+  .-mr-#{$i} {
+    margin-right: math.div($i, 4) * -1rem;
+  }
+}
+
+// 14-16
+@for $i from 7 through 8 {
+  .p-#{$i*2} {
+    padding: math.div($i, 2) * 1rem;
+  }
+  .px-#{$i*2} {
+    padding-left: math.div($i, 2) * 1rem;
+    padding-right: math.div($i, 2) * 1rem;
+  }
+  .py-#{$i*2} {
+    padding-top: math.div($i, 2) * 1rem;
+    padding-bottom: math.div($i, 2) * 1rem;
+  }
+  .pt-#{$i*2} {
+    padding-top: math.div($i, 2) * 1rem;
+  }
+  .pb-#{$i*2} {
+    padding-bottom: math.div($i, 2) * 1rem;
+  }
+  .pl-#{$i*2} {
+    padding-left: math.div($i, 2) * 1rem;
+  }
+  .pr-#{$i*2} {
+    padding-right: math.div($i, 2) * 1rem;
+  }
+
+  .-p-#{$i*2} {
+    padding: math.div($i, 2) * -1rem;
+  }
+  .-px-#{$i*2} {
+    padding-left: math.div($i, 2) * -1rem;
+    padding-right: math.div($i, 2) * -1rem;
+  }
+  .-py-#{$i*2} {
+    padding-top: math.div($i, 2) * 1rem;
+    padding-bottom: math.div($i, 2) * 1rem;
+  }
+  .-pt-#{$i*2} {
+    padding-top: math.div($i, 2) * -1rem;
+  }
+  .-pb-#{$i*2} {
+    padding-bottom: math.div($i, 2) * -1rem;
+  }
+  .-pl-#{$i*2} {
+    padding-left: math.div($i, 2) * -1rem;
+  }
+  .-pr-#{$i*2} {
+    padding-right: math.div($i, 2) * -1rem;
+  }
+
+  .m-#{$i*2} {
+    margin: math.div($i, 2) * 1rem;
+  }
+  .mx-#{$i*2} {
+    margin-left: math.div($i, 2) * 1rem;
+    margin-right: math.div($i, 2) * 1rem;
+  }
+  .my-#{$i*2} {
+    margin-top: math.div($i, 2) * 1rem;
+    margin-bottom: math.div($i, 2) * 1rem;
+  }
+  .mt-#{$i*2} {
+    margin-top: math.div($i, 2) * 1rem;
+  }
+  .mb-#{$i*2} {
+    margin-bottom: math.div($i, 2) * 1rem;
+  }
+  .ml-#{$i*2} {
+    margin-left: math.div($i, 2) * 1rem;
+  }
+  .mr-#{$i*2} {
+    margin-right: math.div($i, 2) * 1rem;
+  }
+
+  .-m-#{$i*2} {
+    margin: math.div($i, 2) * -1rem;
+  }
+  .-mx-#{$i*2} {
+    margin-left: math.div($i, 2) * -1rem;
+    margin-right: math.div($i, 2) * -1rem;
+  }
+  .-my-#{$i*2} {
+    margin-top: math.div($i, 2) * -1rem;
+    margin-bottom: math.div($i, 2) * -1rem;
+  }
+  .-mt-#{$i*2} {
+    margin-top: math.div($i, 2) * -1rem;
+  }
+  .-mb-#{$i*2} {
+    margin-bottom: math.div($i, 2) * -1rem;
+  }
+  .-ml-#{$i*2} {
+    margin-left: math.div($i, 2) * -1rem;
+  }
+  .-mr-#{$i*2} {
+    margin-right: math.div($i, 2) * -1rem;
+  }
+}
+
+// 20-64
+@for $i from 5 through 16 {
+  .p-#{$i*4} {
+    padding: $i * 1rem;
+  }
+  .px-#{$i*4} {
+    padding-left: $i * 1rem;
+    padding-right: $i * 1rem;
+  }
+  .py-#{$i*4} {
+    padding-top: $i * 1rem;
+    padding-bottom: $i * 1rem;
+  }
+  .pt-#{$i*4} {
+    padding-top: $i * 1rem;
+  }
+  .pb-#{$i*4} {
+    padding-bottom: $i * 1rem;
+  }
+  .pl-#{$i*4} {
+    padding-left: $i * 1rem;
+  }
+  .pr-#{$i*4} {
+    padding-right: $i * 1rem;
+  }
+
+  .-p-#{$i*4} {
+    padding: $i * -1rem;
+  }
+  .-px-#{$i*4} {
+    padding-left: $i * -1rem;
+    padding-right: $i * -1rem;
+  }
+  .-py-#{$i*4} {
+    padding-top: $i * -1rem;
+    padding-bottom: $i * -1rem;
+  }
+  .-pt-#{$i*4} {
+    padding-top: $i * -1rem;
+  }
+  .-pb-#{$i*4} {
+    padding-bottom: $i * -1rem;
+  }
+  .-pl-#{$i*4} {
+    padding-left: $i * -1rem;
+  }
+  .-pr-#{$i*4} {
+    padding-right: $i * -1rem;
+  }
+
+  .m-#{$i*4} {
+    margin: $i * 1rem;
+  }
+  .mx-#{$i*4} {
+    margin-left: $i * 1rem;
+    margin-right: $i * 1rem;
+  }
+  .my-#{$i*4} {
+    margin-top: $i * 1rem;
+    margin-bottom: $i * 1rem;
+  }
+  .mt-#{$i*4} {
+    margin-top: $i * 1rem;
+  }
+  .mb-#{$i*4} {
+    margin-bottom: $i * 1rem;
+  }
+  .ml-#{$i*4} {
+    margin-left: $i * 1rem;
+  }
+  .mr-#{$i*4} {
+    margin-right: $i * 1rem;
+  }
+
+  .-m-#{$i*4} {
+    margin: $i * -1rem;
+  }
+  .-mx-#{$i*4} {
+    margin-left: $i * -1rem;
+    margin-right: $i * -1rem;
+  }
+  .-my-#{$i*4} {
+    margin-top: $i * -1rem;
+    margin-bottom: $i * -1rem;
+  }
+  .-mt-#{$i*4} {
+    margin-top: $i * -1rem;
+  }
+  .-mb-#{$i*4} {
+    margin-bottom: $i * -1rem;
+  }
+  .-ml-#{$i*4} {
+    margin-left: $i * -1rem;
+  }
+  .-mr-#{$i*4} {
+    margin-right: $i * -1rem;
+  }
+}

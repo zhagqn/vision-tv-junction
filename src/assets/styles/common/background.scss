@@ -1,0 +1,42 @@
+// background-attachment
+
+$attachments: fixed, local, scroll;
+
+@each $attachment in $attachments {
+  .bg-#{$attachment} {
+    background-attachment: $attachment;
+  }
+}
+
+// background-position
+
+$positions: bottom, center, left, right, top;
+
+@each $position in $positions {
+  .bg-#{$position} {
+    background-position: $position;
+  }
+}
+
+.bg-left-bottom {
+  background-position: left bottom;
+}
+.bg-left-top {
+  background-position: left top;
+}
+.bg-right-bottom {
+  background-position: right bottom;
+}
+.bg-right-bottom {
+  background-position: right bottom;
+}
+
+// background-size
+
+$sizes: auto, cover, contain;
+
+@each $size in $sizes {
+  .bg-#{$size} {
+    background-size: $size;
+  }
+}

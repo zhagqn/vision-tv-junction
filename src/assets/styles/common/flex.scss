@@ -1,0 +1,167 @@
+// flex-direction
+
+$directions: (
+  row: row,
+  col: column,
+  row-reverse: row-reverse,
+  col-reverse: column-reverse,
+);
+
+@each $direction, $value in $directions {
+  .flex-#{$direction} {
+    flex-direction: #{$value};
+  }
+}
+
+// flex-wrap
+
+$wraps: wrap, wrap-reverse, nowrap;
+
+@each $wrap in $wraps {
+  .flex-#{$wrap} {
+    flex-wrap: $wrap;
+  }
+}
+
+$modes: auto, start, end, center, stretch;
+
+@each $mode in $modes {
+  // justify-items
+
+  .justify-items-#{$mode} {
+    justify-items: $mode;
+  }
+
+  // justify-self
+  .justify-self-#{$mode} {
+    justify-self: $mode;
+  }
+
+  // align-self
+  .self-#{$mode} {
+    align-self: $mode;
+  }
+
+  // place-items
+  .place-items-#{$mode} {
+    place-items: $mode;
+  }
+
+  // place-self
+  .place-self-#{$mode} {
+    place-self: $mode;
+  }
+}
+
+$modes: (
+  center: center,
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+
+@each $mode, $value in $modes {
+  // justify-content
+  .justify-#{$mode} {
+    justify-content: $value;
+  }
+
+  // 	align-content
+  .content-#{$mode} {
+    align-content: $value;
+  }
+}
+
+// place-content
+
+$modes: (
+  center: center,
+  start: start,
+  end: end,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+  stretch: stretch,
+);
+
+@each $mode, $value in $modes {
+  .place-content-#{$mode} {
+    place-content: $value;
+  }
+}
+
+// align-items
+
+$modes: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch,
+);
+
+@each $mode, $value in $modes {
+  .items-#{$mode} {
+    align-items: $value;
+  }
+}
+
+// flex
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+// flex-grow
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+// flex-shrink
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+// order
+
+@for $i from 1 through 12 {
+  .order-#{$i} {
+    order: $i;
+  }
+}
+
+.order-first {
+  order: -9999;
+}
+
+.order-last {
+  order: 9999;
+}
+
+.order-none {
+  order: 0;
+}

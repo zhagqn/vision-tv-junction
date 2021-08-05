@@ -1,0 +1,30 @@
+{
+  "app": {
+    "title": "Title",
+    "test": "test"
+  },
+  "hello": "Hello",
+  "openTip": "Open prompt",
+  "component": {
+    "register": {
+      "tip": "Device registration",
+      "roomNum": "room number",
+      "verifyCode": "Please enter verification code",
+      "confirm": "Confirm",
+      "error": "Wrong room number or verification code"
+    },
+    "header": {
+      "room": "Room",
+      "welcome": "Welcome"
+    },
+    "footer": {
+      "back": "Return",
+      "ok": "Enter",
+      "select": "Select"
+    }
+  },
+  "welcome": {
+    "room": "Room",
+    "title": "Welcome"
+  }
+}

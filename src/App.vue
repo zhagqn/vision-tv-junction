@@ -1,32 +1,31 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div
+    id="app"
+    :data-skin="skin"
+    class="h-screen w-screen overflow-hidden font-sans"
+  >
+    <init v-if="!inited"></init>
+    <router-view v-else />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import init from "@/components/init";
+import { mapState } from "vuex";
+export default {
+  components: {
+    init,
+  },
+  computed: {
+    ...mapState({
+      inited: (state) => state.app.inited,
+      skin: (state) => state.app.skin,
+      theme: (state) => state.app.theme,
+    }),
+  },
+};
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style lang="scss" scoped>
+@import url(//at.alicdn.com/t/font_2668886_m76bm00pm58.css);
 </style>

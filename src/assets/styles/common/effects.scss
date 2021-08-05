@@ -1,0 +1,8 @@
+@use 'sass:math';
+
+// opacity
+@for $i from 0 through 20 {
+  .opacity-#{$i*5} {
+    opacity: math.div($i * 5, 100);
+  }
+}

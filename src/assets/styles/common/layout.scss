@@ -1,0 +1,352 @@
+@use 'sass:math';
+
+// box-sizing
+
+.box-border {
+  box-sizing: border-box;
+}
+
+.box-content {
+  box-sizing: content-box;
+}
+
+// display
+
+$displays: block, inline-block, inline, flex, inline-flex, table, inline-table;
+
+@each $display in $displays {
+  .#{$display} {
+    display: $display;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+// float
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-none {
+  float: none;
+}
+
+// clear float
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.clear-none {
+  clear: none;
+}
+
+// overflow
+
+$ways: auto, hidden, visible, scroll;
+
+@each $way in $ways {
+  .overflow-#{$way} {
+    overflow: $way;
+  }
+
+  .overflow-x-#{$way} {
+    overflow-x: $way;
+  }
+
+  .overflow-y-#{$way} {
+    overflow-y: $way;
+  }
+}
+
+// position
+
+.static {
+  position: static;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+}
+
+// top/right/bottom/left
+
+$fractions: (
+  "1\\\/2": 50%,
+  "1\\\/3": 33.33333333%,
+  "2\\\/3": 66.66666667%,
+  "1\\\/4": 25%,
+  "3\\\/4": 75%,
+);
+
+@each $fraction, $percent in $fractions {
+  .inset-#{$fraction} {
+    top: $percent;
+    left: $percent;
+    right: $percent;
+    bottom: $percent;
+  }
+  .-inset-#{$fraction} {
+    top: -$percent;
+    left: -$percent;
+    right: -$percent;
+    bottom: -$percent;
+  }
+  .inset-x-#{$fraction} {
+    left: $percent;
+    right: $percent;
+  }
+  .-inset-x-#{$fraction} {
+    left: -$percent;
+    right: -$percent;
+  }
+  .inset-y-#{$fraction} {
+    top: $percent;
+    bottom: $percent;
+  }
+  .-inset-y-#{$fraction} {
+    top: -$percent;
+    bottom: -$percent;
+  }
+
+  $positions: top, left, right, bottom;
+  @each $position in $positions {
+    .#{$position}-full {
+      #{$position}: 100%;
+    }
+    .-#{$position}-full {
+      #{$position}: -100%;
+    }
+    .#{$position}-#{$fraction} {
+      #{$position}: $percent;
+    }
+    .-#{$position}-#{$fraction} {
+      #{$position}: -$percent;
+    }
+  }
+}
+
+// 0-3.5
+$nums: (
+  0: "0",
+  0.5: "0\\\.5",
+  1: "1",
+  1.5: "1\\\.5",
+  2: "2",
+  2.5: "2\\\.5",
+  3: "3",
+  3.5: "3\\\.5",
+);
+
+@each $i, $s in $nums {
+  .inset-#{$s} {
+    top: math.div($i, 4) * 1rem;
+    left: math.div($i, 4) * 1rem;
+    right: math.div($i, 4) * 1rem;
+    bottom: math.div($i, 4) * 1rem;
+  }
+  .-inset-#{$s} {
+    top: math.div($i, 4) * -1rem;
+    left: math.div($i, 4) * -1rem;
+    right: math.div($i, 4) * -1rem;
+    bottom: math.div($i, 4) * -1rem;
+  }
+  .inset-x-#{$s} {
+    left: math.div($i, 4) * 1rem;
+    right: math.div($i, 4) * 1rem;
+  }
+  .-inset-x-#{$s} {
+    left: math.div($i, 4) * -1rem;
+    right: math.div($i, 4) * -1rem;
+  }
+  .inset-y-#{$s} {
+    top: math.div($i, 4) * 1rem;
+    bottom: math.div($i, 4) * 1rem;
+  }
+  .-inset-y-#{$s} {
+    top: math.div($i, 4) * -1rem;
+    bottom: math.div($i, 4) * -1rem;
+  }
+
+  $positions: top, left, right, bottom;
+  @each $position in $positions {
+    .#{$position}-#{$s} {
+      #{$position}: math.div($i, 4) * 1rem;
+    }
+    .-#{$position}-#{$s} {
+      #{$position}: math.div($i, 4) * -1rem;
+    }
+  }
+}
+
+// 4-12
+@for $i from 4 through 12 { 
+  .inset-#{$i} {
+    top: math.div($i, 4) * 1rem;
+    left: math.div($i, 4) * 1rem;
+    right: math.div($i, 4) * 1rem;
+    bottom: math.div($i, 4) * 1rem;
+  }
+  .-inset-#{$i} {
+    top: math.div($i, 4) * -1rem;
+    left: math.div($i, 4) * -1rem;
+    right: math.div($i, 4) * -1rem;
+    bottom: math.div($i, 4) * -1rem;
+  }
+  .inset-x-#{$i} {
+    left: math.div($i, 4) * 1rem;
+    right: math.div($i, 4) * 1rem;
+  }
+  .-inset-x-#{$i} {
+    left: math.div($i, 4) * -1rem;
+    right: math.div($i, 4) * -1rem;
+  }
+  .inset-y-#{$i} {
+    top: math.div($i, 4) * 1rem;
+    bottom: math.div($i, 4) * 1rem;
+  }
+  .-inset-y-#{$i} {
+    top: math.div($i, 4) * -1rem;
+    bottom: math.div($i, 4) * -1rem;
+  }
+  $positions: top, left, right, bottom;
+  @each $position in $positions {
+    .#{$position}-#{$i} {
+      #{$position}: math.div($i, 4) * 1rem;
+    }
+    .-#{$position}-#{$i} {
+      #{$position}: math.div($i, 4) * -1rem;
+    }
+  }
+}
+
+// 14-16
+@for $i from 7 through 8 {
+  .inset-#{$i*2} {
+    top: math.div($i, 2) * 1rem;
+    left: math.div($i, 2) * 1rem;
+    right: math.div($i, 2) * 1rem;
+    bottom: math.div($i, 2) * 1rem;
+  }
+  .-inset-#{$i*2} {
+    top: math.div($i, 2) * -1rem;
+    left: math.div($i, 2) * -1rem;
+    right: math.div($i, 2) * -1rem;
+    bottom: math.div($i, 2) * -1rem;
+  }
+  .inset-x-#{$i*2} {
+    left: math.div($i, 2) * 1rem;
+    right: math.div($i, 2) * 1rem;
+  }
+  .-inset-x-#{$i*2} {
+    left: math.div($i, 2) * -1rem;
+    right: math.div($i, 2) * -1rem;
+  }
+  .inset-y-#{$i*2} {
+    top: math.div($i, 2) * 1rem;
+    bottom: math.div($i, 2) * 1rem;
+  }
+  .-inset-y-#{$i*2} {
+    top: math.div($i, 2) * -1rem;
+    bottom: math.div($i, 2) * -1rem;
+  }
+  $positions: top, left, right, bottom;
+  @each $position in $positions {
+    .#{$position}-#{$i*2} {
+      #{$position}: math.div($i, 2) * 1rem;
+    }
+    .-#{$position}-#{$i*2} {
+      #{$position}: math.div($i, 2) * -1rem;
+    }
+  }
+}
+
+// 20-64
+@for $i from 5 through 16 {
+  .inset-#{$i*4} {
+    top: $i * 1rem;
+    left: $i * 1rem;
+    right: $i * 1rem;
+    bottom: $i * 1rem;
+  }
+  .-inset-#{$i*4} {
+    top: $i * -1rem;
+    left: $i * -1rem;
+    right: $i * -1rem;
+    bottom: $i * -1rem;
+  }
+  .inset-x-#{$i*4} {
+    left: $i * 1rem;
+    right: $i * 1rem;
+  }
+  .-inset-x-#{$i*4} {
+    left: $i * -1rem;
+    right: $i * -1rem;
+  }
+  .inset-y-#{$i*4} {
+    top: $i * 1rem;
+    bottom: $i * 1rem;
+  }
+  .-inset-y-#{$i*4} {
+    top: $i * -1rem;
+    bottom: $i * -1rem;
+  }
+  $positions: top, left, right, bottom;
+  @each $position in $positions {
+    .#{$position}-#{$i*4} {
+      #{$position}: $i * 1rem;
+    }
+    .-#{$position}-#{$i*4} {
+      #{$position}: $i * -1rem;
+    }
+  }
+}
+
+// visible
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// z-index
+
+@for $i from 0 through 5 {
+  .z-#{$i} {
+    z-index: $i * 10;
+  }
+}
+
+.z-auto {
+  z-index: auto;
+}

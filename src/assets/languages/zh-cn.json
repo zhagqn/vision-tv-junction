@@ -1,0 +1,36 @@
+{
+  "hello": "你好",
+  "app": {
+    "title": "标题",
+    "test": "测试"
+  },
+  "openTip": "打开提示",
+  "component": {
+    "register": {
+      "tip": "设备注册",
+      "roomNum": "请输入房间号",
+      "verifyCode": "请输入验证码",
+      "confirm": "确认",
+      "error": "房间号或验证码错误"
+    },
+    "header": {
+      "welcome": "欢迎",
+      "room": "房间"
+    },
+    "footer": {
+      "select": "选择",
+      "back": "返回",
+      "ok": "确定"
+    }
+  },
+  "welcome": {
+    "room": "房间号",
+    "title": "欢迎"
+  },
+  "airplay": {
+    "tip1": "连接酒店WiFi，然后用任意APP扫描右侧二维码",
+    "tip2": "在手机上电机“认证连接”完整绑定",
+    "tip3": "在手机上打开视频软件，点击投屏按钮，选择当前房间设备",
+    "tip4": "(iOS设备可使用镜像功能)"
+  }
+}
