@@ -21,8 +21,9 @@ export default {
 
 <style lang="scss" scoped>
 .logo {
-  &._ps_0086000069 {
-    width: 52rem;
+  width: 8rem;
+  &._ps_0086000075 {
+    width: 7rem;
   }
   &._ps_0086000055 {
     height: 8rem;

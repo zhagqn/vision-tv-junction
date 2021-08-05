@@ -121,12 +121,10 @@ export default {
         this.goMusic();
       } else if (item.langAgnosticId === "setting") {
         this.goSetting();
-      }
-      if (item.langAgnosticId === "qrq") {
+      } else if (item.langAgnosticId === "qrq") {
         this.goQrcode(item.pageId);
       } else if (item.infoListIds && item.infoListIds.length > 0) {
         item.infoList = await api.page.batch(item.infoListIds);
-
         if (item.infoList[0].subpage_type === "TV_CHANNEL") {
           this.goTVPlayer();
         } else if (item.infoList[0].subpage_type === "WEATHER") {
