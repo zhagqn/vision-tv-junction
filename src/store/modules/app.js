@@ -1,7 +1,9 @@
+const version = require("../../../package.json").version;
 export default {
   namespaced: true,
   state: () => ({
     locale: "zh-cn",
+    version,
     inited: false,
     hotelId: "",
     restaurantId: "",

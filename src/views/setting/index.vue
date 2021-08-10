@@ -8,8 +8,7 @@
       :data="locales"
       :focus="true"
       @ok="okHandler"
-    v-model="btnIndex"
-
+      v-model="btnIndex"
       @change="changeHandler"
     >
       <template v-slot="{ item }">
@@ -18,8 +17,9 @@
             {{ item.title }}
           </div>
         </tvc-cell>
-      </template></tvc-panel
-    >
+      </template>
+    </tvc-panel>
+    <div class="version fixed right-2 bottom-2">{{ version }}</div>
   </div>
 </template>
 
@@ -46,6 +46,7 @@ export default {
   },
   computed: {
     ...mapState({
+      version: (state) => state.app.version,
       locale: (state) => state.app.locale,
     }),
   },
@@ -87,5 +88,8 @@ export default {
       @include background_color("setting-focus-button-background");
     }
   }
+}
+.version {
+  @include color("setting-version-color");
 }
 </style>
