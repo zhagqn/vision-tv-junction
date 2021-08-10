@@ -21,7 +21,7 @@ export const goDps = function () {
   // eslint-disable-next-line
   console.log("goDps")
   if (system.system === 'android') {
-    window.JS && window.JS.goDps(30);
+    window.JS && window.JS.goDps(-1);
   }
 }
 
