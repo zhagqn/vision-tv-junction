@@ -33,16 +33,16 @@
         </div>
       </div>
 
-      <div class="qrcode w-48">
-        <img class="w-full" :src="qrcode.src" alt="" />
+      <div class="qrcode w-52">
+        <div class="w-full" ref="qrcode" alt="" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import api from "@/api";
 import { goDps } from "@/libs/native";
+import QRCode from "qrcodejs2";
 export default {
   data() {
     return {
@@ -56,10 +56,13 @@ export default {
   mounted() {
     goDps();
     const { qrcode } = this;
-    window.goAirplay = async (code) => {
+    window.goAirplay = (code) => {
       qrcode.show = true;
-      const res = await api.util.qr_code(code);
-      qrcode.src = window.URL.createObjectURL(res);
+      new QRCode(this.$refs.qrcode, {
+        width: (window.innerWidth / 100) * 15,
+        height: (window.innerWidth / 100) * 15,
+        text: code,
+      });
     };
     this.$bus.on("onkey", (key) => {
       if (key === "back") {
